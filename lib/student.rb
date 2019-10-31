@@ -16,5 +16,5 @@ attr_reader :id
         SQL
     DB[:conn].execute(sql) 
   end
-  def.
+  def.drop_table
 end
