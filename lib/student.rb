@@ -22,10 +22,10 @@ attr_reader :id
   end
   def save
     sql = <<-SQL
-      INSERT INTO songs (name, grade) 
-      VALUES (?, ?)
+      INSERT INTO songs (name, grade,id) 
+      VALUES (?, ?,?)
     SQL
  
-    DB[:conn].execute(sql, self.name, self.grade)
+    DB[:conn].execute(sql, self.name, self.grade, self.id)
  end 
 end
