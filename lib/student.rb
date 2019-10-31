@@ -20,5 +20,12 @@ attr_reader :id
     sql = "DROP TABLE IF EXISTS students"
     DB[:conn].execute(sql)
   end
-  
+  def save
+    sql = <<-SQL
+      INSERT INTO songs (name, grade) 
+      VALUES (?, ?)
+    SQL
+ 
+    DB[:conn].execute(sql, self.name, self.grade)
+ end 
 end
